@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SupportLibraryDemo</string>
+    <string name="bottom_sheet">BottomSheet</string>
+</resources>
