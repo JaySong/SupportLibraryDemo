@@ -28,6 +28,7 @@ public class BottomSheetActivity extends SimpleActivity implements View.OnClickL
         View bottomSheet = findViewById(R.id.bottom_sheet);
         if (bottomSheet != null) {
             behavior = BottomSheetBehavior.from(bottomSheet);
+            behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
         }
     }
 
@@ -38,7 +39,9 @@ public class BottomSheetActivity extends SimpleActivity implements View.OnClickL
                 int state = behavior.getState();
                 if (state == BottomSheetBehavior.STATE_EXPANDED) {
                     behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-                } else {
+                } else if(state == BottomSheetBehavior.STATE_COLLAPSED){
+                    behavior.setState(BottomSheetBehavior.STATE_HIDDEN);
+                }else if(state == BottomSheetBehavior.STATE_HIDDEN){
                     behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                 }
                 break;
